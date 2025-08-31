@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "gopls" }
+local servers = { "html", "cssls", "gopls", "intelephense" }
 vim.lsp.enable(servers)
 
 -- Configure gopls for auto-imports
@@ -39,6 +39,23 @@ vim.lsp.config.gopls = {
       staticcheck = true,
       directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
       semanticTokens = true,
+    },
+  },
+}
+
+-- Configure intelephense for PHP auto-imports
+vim.lsp.config.intelephense = {
+  settings = {
+    intelephense = {
+      files = {
+        maxSize = 1000000,
+      },
+      format = {
+        enable = true,
+      },
+      environment = {
+        includePaths = { "vendor" },
+      },
     },
   },
 }
