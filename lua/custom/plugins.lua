@@ -5,6 +5,11 @@ local plugins = {
       ensure_installed = {
         "gopls",
         "intelephense",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettier",
+        "js-debug-adapter",
+        "php-cs-fixer",
       },
     },
   },
@@ -39,6 +44,33 @@ local plugins = {
       })
     end,
     event = "BufEnter",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "html",
+        "css",
+        "scss",
+        "lua",
+        "vim",
+        "vimdoc",
+        "go",
+        "php",
+        "markdown",
+        "markdown_inline",
+      },
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+    },
   },
 }
 return plugins

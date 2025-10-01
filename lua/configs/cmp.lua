@@ -60,11 +60,11 @@ local options = {
   },
 
   sources = {
-    { name = "codeium" },
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "async_path" },
+    { name = "codeium", priority = 1000 },
+    { name = "nvim_lsp", priority = 500 },
+    { name = "luasnip", priority = 750 },
+    { name = "buffer", priority = 250 },
+    { name = "async_path", priority = 100 },
   },
 }
 
